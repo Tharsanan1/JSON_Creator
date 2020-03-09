@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Managers from "./Managers";
-import Workers from "./Workers";
+import Managers from "./Hosts";
+import Workers from "./Hosts";
 class Servers extends Component {
     constructor(props){
         super(props);
@@ -23,7 +23,7 @@ class Servers extends Component {
                         managers : this.state.managerData,
                         workers : this.state.workersData
                     }
-                })
+                }, null, "\t")
             });
         });
     }
@@ -38,7 +38,7 @@ class Servers extends Component {
                         managers : this.state.managerData,
                         workers : this.state.workerData
                     }
-                })
+                }, null, "\t")
             });
         });
     }
@@ -46,8 +46,10 @@ class Servers extends Component {
     render(){
         return(
             <div>
-                <Managers sendMyData = {this.managersDataRecieved}/>
-                <Workers sendMyData = {this.workersDataRecieved}/>
+                <Managers sendMyData = {this.managersDataRecieved} name = {"Manager"}/>
+                <div style={{margin:"20px"}}></div>
+                <Workers sendMyData = {this.workersDataRecieved} name = {"Worker"}/>
+                <div style={{margin:"20px"}}></div>
                 <div><textarea class="form-control" rows="5" id="comment"  value={this.state.jsonText}></textarea></div>
             </div>
         );

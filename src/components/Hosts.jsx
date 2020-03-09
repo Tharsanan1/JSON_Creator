@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
 import Host from "./Host";
-class Workers extends Component {
+class Hosts extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -51,10 +51,11 @@ class Workers extends Component {
 
 
     render() {
+        
         return (
             <div style={{ borderStyle: "solid", borderColor: "blue" }}>
                 <div style={{ margin: "20px" }}>
-                    <div><h2>Workers</h2></div>
+                    <div><h2>{this.props.name}</h2></div>
                     {this.state.hosts}
                     <Button variant="contained" color="primary" style={{ marginTop: "20px" }} onClick={this.addHost} >Add Host</Button>
                 </div>
@@ -63,4 +64,4 @@ class Workers extends Component {
     }
 }
 
-export default Workers;
+export default Hosts;
