@@ -21,7 +21,7 @@ class Servers extends Component {
                 jsonText: JSON.stringify({
                     servers: {
                         managers: this.state.managerData,
-                        workers: this.state.workersData
+                        workers: this.state.workerData
                     }
                 }, null, "\t")
             });
