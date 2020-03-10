@@ -7,11 +7,13 @@ class Hosts extends Component {
         this.state = {
             hosts: [], //<Host key = {1}/>, <Host key = {2}/>
             count: 1,
-            hostData: []
+            hostData: [],
+            color : "#000000"
         };
         this.addHost = this.addHost.bind(this);
         this.dataReceivedFromHost = this.dataReceivedFromHost.bind(this);
         this.deleteTheHost = this.deleteTheHost.bind(this);
+        
     }
 
     dataReceivedFromHost(hostData) {
@@ -51,12 +53,14 @@ class Hosts extends Component {
 
 
     render() {
-        
+        let color = "#d7eff7"
         return (
-            <div style={{ borderStyle: "solid", borderColor: "blue" }}>
+            <div style={{ borderStyle: "solid", borderColor: this.state.color , backgroundColor:"#edf3f5"}}>
                 <div style={{ margin: "20px" }}>
                     <div><h2>{this.props.name}</h2></div>
-                    {this.state.hosts}
+                    <div style = {{display:"flex", flexDirection:"row"}}>
+                        {this.state.hosts}
+                    </div>
                     <Button variant="contained" color="primary" style={{ marginTop: "20px" }} onClick={this.addHost} >Add Host</Button>
                 </div>
             </div>

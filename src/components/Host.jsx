@@ -27,7 +27,7 @@ class Host extends Component {
 
     render() {
         return (
-            <div className="card" style = {{margin:"20px"}}>
+            <div className="card" style = {{margin:"20px", backgroundColor:"#dfe8f7"}}>
                 <div className="card-body">
                     <div style={{marginBottom:"20px"}}>
                         <label htmlFor="hostName">Host Name</label>
@@ -37,7 +37,7 @@ class Host extends Component {
                         <label htmlFor="hostUser">User Name</label>
                         <input className="form-control" id="hostUserTextInput" value = {this.state.userName} onChange = {(e) => this.handleInputChange(e, "userName")}/>
                     </div>
-                    <button type="button" className="btn btn-danger" onClick={() => this.props.deleteMe(this.state.id)}>Delete {this.state.hostName}</button>
+                    <button type="button" className="btn btn-danger" onClick={() => this.props.deleteMe(this.state.id)}>Delete</button>
                 </div>
             </div>
 
